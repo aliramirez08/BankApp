@@ -18,12 +18,26 @@ A simple Java Swing-based GUI application that allows a user to manage a bank ac
 
 ## Screenshots
 
-  ### Application Running
-  ![App Running](Screen%20Shot%202025-03-28%20at%2012.44.17%20AM.png)
+### For `BankAccount.java`
 
-  ### Git History
-  ![Git History](Screen%20Shot%202025-03-28%20at%2012.46.13%20AM.png)
+```markdown
+![BankAccount.java](https://github.com/aliramirez08/BankApp/blob/main/Screen%20Shot%202025-03-28%20at%2012.44.17%20AM.png?raw=true)
+```
 
-> Include screenshots of your app running and Git history here.
+---
 
+### For `BankAppGUI.java`
 
+```markdown
+![BankAppGUI.java - Part 1](https://github.com/aliramirez08/BankApp/blob/main/Screen%20Shot%202025-03-28%20at%2012.46.13%20AM.png?raw=true)
+![BankAppGUI.java - Part 2](https://github.com/aliramirez08/BankApp/blob/main/Screen%20Shot%202025-03-28%20at%2012.51.35%20AM.png?raw=true)
+![BankAppGUI.java - Part 3](https://github.com/aliramirez08/BankApp/blob/main/Screen%20Shot%202025-03-28%20at%2012.54.51%20AM.png?raw=true)
+```
+
+---
+
+### For Running App Screenshot
+
+```markdown
+![Bank Balance App](https://github.com/aliramirez08/BankApp/blob/main/Screen%20Shot%202025-03-28%20at%202.07.03%20AM.png?raw=true)
+```

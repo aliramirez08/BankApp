@@ -1,70 +1,46 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 
 /**
- * A GUI application to manage a simple bank account.
- * Allows users to deposit, withdraw, view balance, and exit.
+ * A GUI application to interact with a BankAccount.
+ * Users can deposit, withdraw, view balance, and exit the application.
  */
 public class BankAppGUI {
-
     private JFrame frame;
     private JTextField inputField;
-    private JTextArea historyArea;
     private JLabel balanceLabel;
+    private JTextArea historyArea;
     private BankAccount account;
 
-    private JButton depositButton;
-    private JButton withdrawButton;
-    private JButton exitButton;
-
     /**
-     * Constructs the GUI application and initializes the bank account.
+     * Constructs the GUI interface and initializes event handlers.
      */
     public BankAppGUI() {
-        account = new BankAccount();
-        initializeGUI();
-    }
+        account = new BankAccount(0.0);
 
-    /**
-     * Entry point of the application.
-     *
-     * @param args command-line arguments (not used)
-     */
-    public static void main(String[] args) {
-        new BankAppGUI();
-    }
-
-    /**
-     * Initializes the GUI and all its components.
-     */
-    private void initializeGUI() {
         frame = new JFrame("Bank Balance App");
-        JPanel panel = new JPanel(new BorderLayout());
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
+        balanceLabel = new JLabel("Current Balance: $0.00");
         inputField = new JTextField(10);
-        historyArea = new JTextArea(10, 40);
+
+        JButton depositButton = new JButton("Deposit");
+        JButton withdrawButton = new JButton("Withdraw");
+        JButton exitButton = new JButton("Exit");
+
+        historyArea = new JTextArea(8, 30);
         historyArea.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(historyArea);
 
-        balanceLabel = new JLabel();
-        updateBalance();
-
-        depositButton = new JButton("Deposit");
-        withdrawButton = new JButton("Withdraw");
-        exitButton = new JButton("Exit");
-
         depositButton.addActionListener(new ActionListener() {
-            /**
-             * Handles deposit button click: parses input and updates account.
-             */
             public void actionPerformed(ActionEvent e) {
                 try {
                     double amount = Double.parseDouble(inputField.getText());
                     account.deposit(amount);
                     updateBalance();
-                    appendHistory(String.format("Deposited $%.2f | New Balance: $%.2f",
-                            amount, account.getBalance()));
+                    appendHistory("Deposited $" + String.format("%.2f", amount) +
+                                  " | New Balance: $" + String.format("%.2f", account.getBalance()));
                     inputField.setText("");
                 } catch (NumberFormatException ex) {
                     showError("Please enter a valid number.");
@@ -73,9 +49,6 @@ public class BankAppGUI {
         });
 
         withdrawButton.addActionListener(new ActionListener() {
-            /**
-             * Handles withdraw button click: validates amount and updates account.
-             */
             public void actionPerformed(ActionEvent e) {
                 try {
                     double amount = Double.parseDouble(inputField.getText());
@@ -85,8 +58,8 @@ public class BankAppGUI {
                     }
                     account.withdraw(amount);
                     updateBalance();
-                    appendHistory(String.format("Withdrew $%.2f | New Balance: $%.2f",
-                            amount, account.getBalance()));
+                    appendHistory("Withdrew $" + String.format("%.2f", amount) +
+                                  " | New Balance: $" + String.format("%.2f", account.getBalance()));
                     inputField.setText("");
                 } catch (NumberFormatException ex) {
                     showError("Please enter a valid number.");
@@ -95,13 +68,9 @@ public class BankAppGUI {
         });
 
         exitButton.addActionListener(new ActionListener() {
-            /**
-             * Handles exit button: shows final balance and exits.
-             */
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame,
-                        "Final Balance: $" + String.format("%.2f", account.getBalance()),
-                        "Final Balance", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "Final Balance: $" +
+                        String.format("%.2f", account.getBalance()));
                 System.exit(0);
             }
         });
@@ -113,8 +82,8 @@ public class BankAppGUI {
         topPanel.add(withdrawButton);
         topPanel.add(exitButton);
 
-        panel.add(topPanel, BorderLayout.NORTH);
-        panel.add(scrollPane, BorderLayout.CENTER);
+        panel.add(topPanel);
+        panel.add(scrollPane);
 
         frame.add(panel);
         frame.setSize(500, 300);
@@ -132,18 +101,27 @@ public class BankAppGUI {
     /**
      * Appends a message to the transaction history area.
      *
-     * @param action the transaction message to append
+     * @param action the message describing the transaction
      */
     private void appendHistory(String action) {
         historyArea.append(action + "\n");
     }
 
     /**
-     * Shows an error dialog with the specified message.
+     * Displays an error message in a dialog box.
      *
-     * @param message the error message
+     * @param message the error message to show
      */
     private void showError(String message) {
         JOptionPane.showMessageDialog(frame, message, "Input Error", JOptionPane.ERROR_MESSAGE);
+    }
+
+    /**
+     * Entry point of the application.
+     *
+     * @param args command-line arguments (not used)
+     */
+    public static void main(String[] args) {
+        new BankAppGUI();
     }
 }

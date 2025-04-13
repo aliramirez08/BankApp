@@ -16,18 +16,60 @@ A simple Java Swing-based GUI application that allows a user to manage a bank ac
 - Java Swing (for GUI)
 - Git & GitHub (for version control)
 
-## Screenshots
 
-### For `BankAccount.java`
+---
 
-![BankAccount.java](Screen%20Shot%202025-03-28%20at%2012.44.17%20AM.png)
+## Features
 
-### For `BankAppGUI.java`
+- View current balance
+-  Deposit funds
+-  Withdraw funds (with overdraft protection)
+-  Real-time transaction history
+-  Final balance displayed on exit
 
-![BankAppGUI.java - Part 1](Screen%20Shot%202025-03-28%20at%2012.46.13%20AM.png)
-![BankAppGUI.java - Part 2](Screen%20Shot%202025-03-28%20at%2012.51.35%20AM.png)
-![BankAppGUI.java - Part 3](Screen%20Shot%202025-03-28%20at%2012.54.51%20AM.png)
 
-### Output
+## Technologies Used
 
-![Bank Balance App](Screen%20Shot%202025-03-28%20at%202.07.03%20AM.png)
+- **Java** (JDK 17+)
+- **Java Swing** (for GUI)
+- **Git & GitHub** (for version control)
+
+
+##  Screenshots
+
+###  BankAccount Source Code
+![BankAccount.java](./BankAccount.png)
+![BankAccount.java](./BankAccount1.png)
+
+
+###  BankAppGUI Source Code
+![BankAppGUI.java](./BankAppGUI.png)
+![BankAppGUI.java](./BankAppGUI2.png)
+![BankAppGUI.java](./BankAppGUI3.png)
+![BankAppGUI.java](./BankAppGUI4.png)
+
+
+###  Program Output
+![Output](./Output.png)
+![Output 2](./Output2.png)
+
+---
+
+###  GitHub Repository
+![Repo Screenshot](./Repo.png)
+
+---
+
+##  How to Run
+
+1. Clone or download this repository.
+2. Compile the source files:
+
+   ```bash
+   javac BankAppGUI.java BankAccount.java
+   ```
+3. Run the application:
+   ```bash
+   java BankAppGUI
+   ```
+The GUI will launch, allowing you to interact with your virtual account.

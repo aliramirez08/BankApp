@@ -3,8 +3,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * A GUI-based application to manage a bank account.
- * It allows users to deposit, withdraw, and view their account balance.
+ * A GUI application to manage a simple bank account.
+ * Allows users to deposit, withdraw, view balance, and exit.
  */
 public class BankAppGUI {
 
@@ -36,7 +36,7 @@ public class BankAppGUI {
     }
 
     /**
-     * Initializes the user interface and sets up all GUI components.
+     * Initializes the GUI and all its components.
      */
     private void initializeGUI() {
         frame = new JFrame("Bank Balance App");
@@ -56,15 +56,15 @@ public class BankAppGUI {
 
         depositButton.addActionListener(new ActionListener() {
             /**
-             * Handles deposit button click: parses input, deposits amount,
-             * updates UI, and catches invalid number format.
+             * Handles deposit button click: parses input and updates account.
              */
             public void actionPerformed(ActionEvent e) {
                 try {
                     double amount = Double.parseDouble(inputField.getText());
                     account.deposit(amount);
                     updateBalance();
-                    appendHistory(String.format("Deposited $%.2f | New Balance: $%.2f", amount, account.getBalance()));
+                    appendHistory(String.format("Deposited $%.2f | New Balance: $%.2f",
+                            amount, account.getBalance()));
                     inputField.setText("");
                 } catch (NumberFormatException ex) {
                     showError("Please enter a valid number.");
@@ -74,8 +74,7 @@ public class BankAppGUI {
 
         withdrawButton.addActionListener(new ActionListener() {
             /**
-             * Handles withdraw button click: parses input, attempts to withdraw,
-             * updates UI, and handles errors like insufficient funds.
+             * Handles withdraw button click: validates amount and updates account.
              */
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -86,7 +85,8 @@ public class BankAppGUI {
                     }
                     account.withdraw(amount);
                     updateBalance();
-                    appendHistory(String.format("Withdrew $%.2f | New Balance: $%.2f", amount, account.getBalance()));
+                    appendHistory(String.format("Withdrew $%.2f | New Balance: $%.2f",
+                            amount, account.getBalance()));
                     inputField.setText("");
                 } catch (NumberFormatException ex) {
                     showError("Please enter a valid number.");
@@ -96,7 +96,7 @@ public class BankAppGUI {
 
         exitButton.addActionListener(new ActionListener() {
             /**
-             * Handles exit button click: shows final balance and exits app.
+             * Handles exit button: shows final balance and exits.
              */
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(frame,
@@ -130,18 +130,18 @@ public class BankAppGUI {
     }
 
     /**
-     * Appends a transaction message to the transaction history display.
-     * 
-     * @param action the message describing the transaction
+     * Appends a message to the transaction history area.
+     *
+     * @param action the transaction message to append
      */
     private void appendHistory(String action) {
         historyArea.append(action + "\n");
     }
 
     /**
-     * Displays an error message dialog with the given message.
-     * 
-     * @param message the error message to show
+     * Shows an error dialog with the specified message.
+     *
+     * @param message the error message
      */
     private void showError(String message) {
         JOptionPane.showMessageDialog(frame, message, "Input Error", JOptionPane.ERROR_MESSAGE);

@@ -38,25 +38,25 @@ A simple Java Swing-based GUI application that allows a user to manage a bank ac
 ##  Screenshots
 
 ###  BankAccount Source Code
-![BankAccount.java](./BankAccount.png)
-![BankAccount.java](./BankAccount1.png)
+![BankAccount.java](./Screenshots/BankAccount.png)
+![BankAccount.java](./Screenshots//BankAccount1.png)
 
 
 ###  BankAppGUI Source Code
-![BankAppGUI.java](./BankAppGUI.png)
-![BankAppGUI.java](./BankAppGUI2.png)
-![BankAppGUI.java](./BankAppGUI3.png)
-![BankAppGUI.java](./BankAppGUI4.png)
+![BankAppGUI.java](./Screenshots/BankAppGUI.png)
+![BankAppGUI.java](./Screenshots/BankAppGUI2.png)
+![BankAppGUI.java](./Screenshots/BankAppGUI3.png)
+![BankAppGUI.java](./Screenshots/BankAppGUI4.png)
 
 
 ###  Program Output
-![Output](./Output.png)
-![Output 2](./Output2.png)
+![Output](./Screenshots/Output.png)
+![Output 2](./Screenshots/Output2.png)
 
 ---
 
 ###  GitHub Repository
-![Repo Screenshot](./Repo.png)
+![Repo Screenshot](./Screenshots/Repo.png)
 
 ---
 

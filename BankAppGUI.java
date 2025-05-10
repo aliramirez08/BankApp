@@ -40,7 +40,7 @@ public class BankAppGUI {
                     account.deposit(amount);
                     updateBalance();
                     appendHistory("Deposited $" + String.format("%.2f", amount) +
-                                  " | New Balance: $" + String.format("%.2f", account.getBalance()));
+                        " | New Balance: $" + String.format("%.2f", account.getBalance()));
                     inputField.setText("");
                 } catch (NumberFormatException ex) {
                     showError("Please enter a valid number.");
@@ -59,7 +59,7 @@ public class BankAppGUI {
                     account.withdraw(amount);
                     updateBalance();
                     appendHistory("Withdrew $" + String.format("%.2f", amount) +
-                                  " | New Balance: $" + String.format("%.2f", account.getBalance()));
+                        " | New Balance: $" + String.format("%.2f", account.getBalance()));
                     inputField.setText("");
                 } catch (NumberFormatException ex) {
                     showError("Please enter a valid number.");
@@ -70,7 +70,7 @@ public class BankAppGUI {
         exitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(frame, "Final Balance: $" +
-                        String.format("%.2f", account.getBalance()));
+                    String.format("%.2f", account.getBalance()));
                 System.exit(0);
             }
         });
@@ -100,7 +100,6 @@ public class BankAppGUI {
 
     /**
      * Appends a message to the transaction history area.
-     *
      * @param action the message describing the transaction
      */
     private void appendHistory(String action) {
@@ -109,7 +108,6 @@ public class BankAppGUI {
 
     /**
      * Displays an error message in a dialog box.
-     *
      * @param message the error message to show
      */
     private void showError(String message) {
@@ -118,7 +116,6 @@ public class BankAppGUI {
 
     /**
      * Entry point of the application.
-     *
      * @param args command-line arguments (not used)
      */
     public static void main(String[] args) {

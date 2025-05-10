@@ -6,7 +6,6 @@ public class BankAccount {
 
     /**
      * Constructs a new BankAccount with a given initial balance.
-     *
      * @param initialBalance the starting balance of the account
      */
     public BankAccount(double initialBalance) {
@@ -15,7 +14,6 @@ public class BankAccount {
 
     /**
      * Deposits a specified amount into the account.
-     *
      * @param amount the amount to deposit
      */
     public void deposit(double amount) {
@@ -24,7 +22,6 @@ public class BankAccount {
 
     /**
      * Withdraws a specified amount from the account if sufficient balance is available.
-     *
      * @param amount the amount to withdraw
      */
     public void withdraw(double amount) {
@@ -33,7 +30,6 @@ public class BankAccount {
 
     /**
      * Returns the current balance of the account.
-     *
      * @return the account balance
      */
     public double getBalance() {

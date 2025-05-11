@@ -34,5 +34,3 @@ test-output/
 surefire-reports/
 jacoco.exec
 
-# === Screenshot folder (optional) ===
-Screenshots/

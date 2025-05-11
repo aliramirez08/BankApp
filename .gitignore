@@ -1,0 +1,38 @@
+# === Java build files ===
+*.class
+*.jar
+*.war
+*.ear
+
+# === VS Code ===
+.vscode/
+
+# === macOS system files ===
+.DS_Store
+
+# === Logs and temp files ===
+*.log
+*.tmp
+*.swp
+
+# === Compiled output directories ===
+bin/
+out/
+build/
+
+# === IDE-specific files ===
+*.iml
+.idea/
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+
+# === Test reports ===
+test-output/
+surefire-reports/
+jacoco.exec
+
+# === Screenshot folder (optional) ===
+Screenshots/
